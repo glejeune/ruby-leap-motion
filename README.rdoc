@@ -1,0 +1,79 @@
+= leap-motion
+
+= DESCRIPTION
+
+Ruby interface to the Leap Motion Controller
+
+If you want to use a WebSocket interface, see https://github.com/glejeune/ruby-leap-motion-ws
+
+= SYNOPSIS
+
+  require 'leap-motion'
+  
+  class MyListener < Leap::Motion::Listener
+    def on_init x
+    end
+  
+    def on_connect x
+    end
+  
+    def on_disconnect x
+    end
+  
+    def on_exit x
+    end
+  
+    def on_frame x
+    end
+  
+    def on_focus_gained x
+    end
+  
+    def on_focus_lost x
+    end
+  end
+  
+  listener = MyListener.new
+  controller = Leap::Motion::Controller.new
+  controller.add_listener listener
+  
+  gone = gets
+  print gone
+  
+  controller.remove_listener listener
+
+= INSTALLATION
+
+  [sudo] gem install leap-motion
+
+= CONTRIBUTING
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+= LICENCE
+
+Copyright (c) 2013, Gregoire Lejeune 
+All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* Neither the name of the University of California, Berkeley nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
