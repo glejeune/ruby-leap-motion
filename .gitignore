@@ -22,6 +22,8 @@ pkg
 # For ext
 Makefile
 ext/config.h
+ext/build.sh
+SDK
 *.bundle
 *.so
 *.dll
